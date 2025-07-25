@@ -16,12 +16,12 @@ import (
 )
 
 func main() {
-	client, err := ethclient.Dial("https://sepolia.infura.io/v3/f20466115d654fbf9e7b59b22d75fd86")
+	client, err := ethclient.Dial("https://sepolia.infura.io/v3/xxx")
 	if err != nil {
 		log.Fatal("Failed to connect to Sepolia:", err)
 	}
 
-	privateKey, err := crypto.HexToECDSA("dfa734e3d1ef518b767b0f1c4efc42cd961a882a8daa3fa68188d876d41895fd")
+	privateKey, err := crypto.HexToECDSA("xxx")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -34,7 +34,7 @@ func main() {
 	chainID := big.NewInt(11155111) // Sepolia
 	auth, _ := bind.NewKeyedTransactorWithChainID(privateKey, chainID)
 
-	contractAddress := common.HexToAddress("0xe162CEBCE98C74A75D5C971AA925E98d1bcc3AF3")
+	contractAddress := common.HexToAddress("xxx")
 	instance, err := counter.NewCounter(contractAddress, client)
 	if err != nil {
 		log.Fatal(err)
